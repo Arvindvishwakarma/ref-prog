@@ -1,0 +1,221 @@
+{% extends "base.html" %}
+{% block title %} About Us{% endblock title %}
+{% block body %} 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About IOTA Academy</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Ensure this matches your existing styling -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<style>
+    .about {
+        background-color: #ffffff; /* White */
+    }
+
+    .why-us {
+        background-color: #f1f3f5; /* Darker Light Gray */
+    }
+
+    .courses {
+        background-color: #ffffff; /* White */
+    }
+
+    .placed-students {
+        background-color: #f1f3f5; /* Darker Light Gray */
+    }
+
+    .network-companies {
+        background-color: #ffffff; /* White */
+    }
+</style>
+
+<body>
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container section-title" data-aos="fade-up">
+            <h2>About</h2>
+            <p><span>Learn More</span> <span class="description-title">About IOTA Academy</span></p>
+        </div>
+
+        <div class="container">
+            <div class="row gy-5">
+                <div class="content col-xl-5 d-flex flex-column" data-aos="fade-up" data-aos-delay="100">
+                    <h3>IOTA Academy - IT Training & Placement Institute</h3>
+                    <p>
+                        IOTA Academy is a premier IT training and placement institute committed to equipping students with in-demand technical skills. Run by IITians, we provide industry-oriented training in various domains of technology, ensuring 100% placement assistance for our students.
+                    </p>
+                    <a href="#courses" class="about-btn align-self-center align-self-xl-start"><span>Explore Courses</span> <i class="bi bi-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="why-us section">
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Why Choose Us?</h2>
+            <p><span>Discover</span> <span class="description-title">What Makes Us Unique</span></p>
+        </div>
+
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-6 icon-box position-relative">
+                    <i class="bi bi-mortarboard"></i>
+                    <h4>Expert Trainers</h4>
+                    <p>Learn from IITians and industry professionals with years of experience.</p>
+                </div>
+
+                <div class="col-md-6 icon-box position-relative">
+                    <i class="bi bi-laptop"></i>
+                    <h4>Hands-on Learning</h4>
+                    <p>Gain practical experience with real-world projects and case studies.</p>
+                </div>
+
+                <div class="col-md-6 icon-box position-relative">
+                    <i class="bi bi-briefcase"></i>
+                    <h4>100% Placement Assistance</h4>
+                    <p>Get career support with resume building, mock interviews, and job referrals.</p>
+                </div>
+
+                <div class="col-md-6 icon-box position-relative">
+                    <i class="bi bi-graph-up-arrow"></i>
+                    <h4>Industry-Oriented Courses</h4>
+                    <p>Our curriculum is designed to match current market demands.</p>
+                </div>
+
+                <div class="col-md-6 icon-box position-relative">
+                    <i class="bi bi-people"></i>
+                    <h4>Strong Alumni Network</h4>
+                    <p>Connect with successful professionals who have trained with us.</p>
+                </div>
+
+                <div class="col-md-6 icon-box position-relative">
+                    <i class="bi bi-card-checklist"></i>
+                    <h4>Certifications</h4>
+                    <p>Earn industry-recognized certifications to boost your resume.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses section">
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Our Courses</h2>
+            <p><span>Explore</span> <span class="description-title">Our Training Programs</span></p>
+        </div>
+        
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-4 icon-box position-relative">
+                    <i class="bi bi-robot"></i>
+                    <h4>Data Science</h4>
+                    <p>Learn machine learning, statistical modeling, and AI-driven solutions.</p>
+                </div>
+
+                <div class="col-md-4 icon-box position-relative">
+                    <i class="bi bi-cpu"></i>
+                    <h4>Machine Learning</h4>
+                    <p>Develop ML models and algorithms to solve complex problems.</p>
+                </div>
+
+                <div class="col-md-4 icon-box position-relative">
+                    <i class="bi bi-code-slash"></i>
+                    <h4>Web Development</h4>
+                    <p>Become a full-stack developer with expertise in front-end and back-end technologies.</p>
+                </div>
+
+                <div class="col-md-4 icon-box position-relative">
+                    <i class="bi bi-bar-chart"></i>
+                    <h4>Data Analytics</h4>
+                    <p>Master data analysis, visualization, and business insights with hands-on training.</p>
+                </div>
+                
+                <div class="col-md-4 icon-box position-relative">
+                    <i class="bi bi-graph-up"></i>
+                    <h4>Business Analytics</h4>
+                    <p>Use analytics tools and techniques to drive data-driven business decisions.</p>
+                </div>
+
+                <div class="col-md-4 icon-box position-relative">
+                    <i class="bi bi-brain"></i>
+                    <h4>Artificial Intelligence</h4>
+                    <p>Dive into deep learning, neural networks, and AI-driven technologies.</p>
+                </div>
+            </div>
+
+            <!-- Learn More Link -->
+            <div class="text-center mt-4">
+                <a href="https://www.iotaacademy.in/our-courses" class="about-btn">
+                    <span>Learn More</span> <i class="bi bi-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placed Students Section -->
+    <section id="placed-students" class="placed-students section">
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Placed Students</h2>
+            <p><span>Success Stories</span> <span class="description-title">Our Top Performers</span></p>
+        </div>
+        
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-4 student-card">
+                    <img src="images/student1.jpg" alt="Student 1">
+                    <h4>Rahul Sharma</h4>
+                    <p>Data Analyst at XYZ Tech</p>
+                </div>
+
+                <div class="col-md-4 student-card">
+                    <img src="images/student2.jpg" alt="Student 2">
+                    <h4>Sneha Verma</h4>
+                    <p>Machine Learning Engineer at ABC Solutions</p>
+                </div>
+
+                <div class="col-md-4 student-card">
+                    <img src="images/student3.jpg" alt="Student 3">
+                    <h4>Amit Kumar</h4>
+                    <p>Full Stack Developer at DEF Corp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Network Companies Section -->
+    <section id="network-companies" class="network-companies section">
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Our Network Companies</h2>
+            <p><span>Where Our Students Work</span> <span class="description-title">Top Hiring Companies</span></p>
+        </div>
+        
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-2 company-logo">
+                    <img src="images/company1.png" alt="Company 1">
+                </div>
+
+                <div class="col-md-2 company-logo">
+                    <img src="images/company2.png" alt="Company 2">
+                </div>
+
+                <div class="col-md-2 company-logo">
+                    <img src="images/company3.png" alt="Company 3">
+                </div>
+
+                <div class="col-md-2 company-logo">
+                    <img src="images/company4.png" alt="Company 4">
+                </div>
+
+                <div class="col-md-2 company-logo">
+                    <img src="images/company5.png" alt="Company 5">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+{% endblock body %}

@@ -1,0 +1,280 @@
+{% load static %}
+{% load custom_filters %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>
+{% block title %} {% endblock title %}
+
+  </title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static '/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static '/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static '/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static '/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static '/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static '/assets/css/main.css' %}" rel="stylesheet">
+
+ 
+</head>
+
+<body class="index-page">
+  <style>
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 150px; /* Adjust this value to increase/decrease space */
+      margin-top: 5px;
+  }
+  
+  </style>
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="/" ><img src="{% static 'images/iota_logo.png'%}" alt="" class="img-fluid" style="width: 280px; height: auto !important;">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="/#hero">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/faq">FAQs</a></li>
+
+          {% if request.user.is_authenticated %}
+          <li><a href="/dashboard">Dashboard</a></li>
+
+          <li class="dropdown"><a href="/profile"><span>{{ user.email|username_from_email }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li>{% if user.is_superuser %}
+                      <a href="/withdraw_admin">Admin Wallet</a>
+                  {% else %}
+                      <a href="/withdraw_admin">Wallet</a>
+                  {% endif %}
+                </li>
+        
+              <li><a href="/referralguidelines">Rewards & Referral</a></li>
+              <li><a href="/privacypolicy">Privacy Policy</a></li>            
+            </ul>
+          </li>
+              {% if user.is_superuser %}
+                  <a href="{% url 'adminportal' %}">Admin Panel</a>
+              {% else %}
+                  <a href="{% url 'dashboard' %}"></a>
+              {% endif %}
+  
+          <li><a href="/auth/logout">Log Out</a></li>
+          
+          {% else %}
+          <li class="dropdown"><a href="#"><span>Sign In</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="/auth/signup">Sign Up</a></li>
+              <li><a href="/auth/login">Log In</a></li>
+            
+            </ul>
+          </li>
+          {% endif %}
+          
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <img src="{% static '/assets/img/hero-bg.jpg' %}" alt="" data-aos="fade-in">
+
+      <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h2>Refer & Earn Rewards!</h2>
+            <p>Invite your friends to join our IT training programs and earn exciting rewards for every successful referral.
+              <a href="/about">Know More About Us...</a>
+            </p>
+            
+            
+            {% comment %} <div class="hero-links">
+              <a href="/about" class="btn-get-started">Know More About Us</a>
+          </div> {% endcomment %}
+            <div class="hero-buttons mt-8"> 
+              <a href="/auth/signup/" class="btn-get-started me-3">Become a Member</a>
+              <a href="/auth/login/" class="btn-get-started">Already a Member</a>
+          </div>
+
+         
+        </div>
+        </div>
+      </div>
+    </section><!-- /Hero Section -->
+
+    
+
+    
+
+    <section id="about" class="about section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+        <h2>Referral Program</h2>
+        <p><span>How It Works</span> <span class="description-title">Refer & Earn<br></span></p>
+        </div><!-- End Section Title -->
+
+        <div class="container">
+
+        <div class="row gy-5">
+
+            <div class="content col-xl-5 d-flex flex-column" data-aos="fade-up" data-aos-delay="100">
+            <h3>Join, Refer & Earn Rewards!</h3>
+            <p>
+                Our referral program is simple! Follow these three easy steps to start referring students and earning rewards.
+            </p>
+            <a href="#" class="about-btn align-self-center align-self-xl-start"><span>Get Started</span> <i class="bi bi-chevron-right"></i></a>
+            </div>
+
+            <div class="col-xl-7" data-aos="fade-up" data-aos-delay="200">
+            <div class="row gy-4">
+
+                <div class="col-md-6 icon-box position-relative">
+                <i class="bi bi-person-plus"></i>
+                <h4><a href="#" class="stretched-link">Step 1: Become a Member</a></h4>
+                <p>Sign up for our referral program by filling out a simple registration form. Once registered, you are officially a part of the program!</p>
+                </div><!-- Icon-Box -->
+
+                <div class="col-md-6 icon-box position-relative">
+                <i class="bi bi-list-check"></i>
+                <h4><a href="#" class="stretched-link">Step 2: Add Student Details</a></h4>
+                <p>Provide the details of the students you want to refer. Ensure their contact information is accurate so we can reach out to them easily.</p>
+                </div><!-- Icon-Box -->
+
+                <div class="col-md-6 icon-box position-relative">
+                <i class="bi bi-cash"></i>
+                <h4><a href="#" class="stretched-link">Step 3: Earn Rewards</a></h4>
+                <p>Once your referred student successfully enrolls in a course, you will receive your reward as per the referral program guidelines.</p>
+                </div><!-- Icon-Box -->
+
+            </div>
+            </div>
+
+        </div>
+
+        </div>
+
+    </section><!-- /Referral Program Section -->
+
+  
+  
+</main>
+
+
+<footer id="footer" class="footer dark-background">
+
+  <div class="container footer-top">
+    <div class="row gy-4">
+      <div class="col-lg-5 col-md-12 footer-about">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <span class="sitename">IOTA Academy</span>
+        </a>
+        <p>IOTA Academy is committed to quality education and student success. IOTA is founded by IITians who have over 7+ years of experience in the field of data science and machine learning.
+          IOTA’s vision is to upskill students and provide job opportunities in the field of IT. Many students already got their start in the field of IT and we believe many more will achieve the same.</p>
+        <div class="social-links d-flex mt-4">
+          <a href=""><i class="bi bi-twitter-x"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-6 footer-links">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="about">About us</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/faq">FAQs</a></li>
+          <li><a href="/referralguidelines">Rewards Policy</a></li>
+          <li><a href="/privacypolicy">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-6 footer-links">
+        <h4>Our Services</h4>
+        <ul>
+            <li><a href="#">Offline and Online Training</a></li>
+            <li><a href="#">100% Placement Assistance</a></li>
+            <li><a href="#">Corporate Training Programs</a></li>
+            <li><a href="#">Corporate Projects</a></li>
+            <li><a href="#">One-to-One Mentorship Programs</a></li>
+            <li><a href="#">Staffing Partner</a></li>
+            <li><a href="#">Hire From Us</a></li>
+            
+          
+           
+        </ul>
+    </div>
+
+      <div class="col-lg-2 col-md-12 footer-contact text-center text-md-start">
+        <h4>Contact Us</h4>
+        <p>Bhanwarkua Main Road</p>
+        <p>Indore, MP 452001</p>
+        <p>India</p>
+        <p class="mt-4"><strong>Website:</strong> <span>wwww.iotaacademy.in</span></p>
+        <p><strong>Email:</strong> <span>wecare.iota@gmail.com</span></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container copyright text-center mt-4">
+    <p>© <span>Copyright</span> <strong class="px-1 sitename">IOTA Academy</strong> <span>All Rights Reserved</span></p>
+    <div class="credits">
+
+      Designed by <a href="https://iotacademy.in/">IOTA Academy</a>
+    </div>
+  </div>
+
+</footer>
+
+<!-- Scroll Top -->
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Preloader -->
+<div id="preloader"></div>
+
+<!-- Vendor JS Files -->
+<script src="{% static '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static '/assets/vendor/php-email-form/validate.js' %}"></script>
+<script src="{% static '/assets/vendor/aos/aos.js' %}"></script>
+<script src="{% static '/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static '/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static '/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+<script src="{% static '/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+<!-- Main JS File -->
+<script src="{% static '/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

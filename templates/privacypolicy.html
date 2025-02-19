@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+{% block title %}FAQs{% endblock title %}
+{% block body %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - IOTA Academy</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+
+<style>
+    /* FAQ Section Styling */
+    .faq-section {
+        background-color: #ffffff;
+        padding: 60px 0;
+    }
+
+    .faq-container {
+        max-width: 850px;
+        margin: 0 auto;
+        background: #ffffff;
+        padding: 35px;
+        border-radius: 12px;
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Title Styling */
+    .faq-title {
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2.5em;
+        font-weight: 700;
+        margin-bottom: 25px;
+        letter-spacing: 0.5px;
+    }
+
+    /* FAQ Item */
+    .faq {
+        margin-bottom: 15px;
+        padding: 18px;
+        border-radius: 8px;
+        background: #f8f9fa;
+        border-left: 5px solid rgb(223, 64, 117);; 
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+    }
+
+    .faq:hover {
+        background: #e9ecef;
+    }
+
+    /* Question Styling */
+    .question {
+        font-size: 1.2em;
+        font-weight: 600;
+        color: #2c3e50;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .toggle-icon {
+        font-size: 1.2em;
+        transition: transform 0.3s ease;
+    }
+
+    /* Answer Styling */
+    .answer {
+        font-size: 1.1em;
+        color: #555;
+        line-height: 1.6;
+        display: none;
+        padding-top: 8px;
+    }
+
+    /* Footer */
+    .faq-footer {
+        text-align: center;
+        font-size: 1em;
+        color: #34495e;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #dfe6e9;
+        font-weight: 500;
+    }
+</style>
+
+<body>
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container section-title" data-aos="fade-up">
+            <p><span class="description-title">Privacy Policy</span></p>
+        </div>
+
+    <div class="container">
+
+        <p>Welcome to the Referral Program Privacy Policy of **IOTA Academy**. This policy outlines how we collect, use, and protect your personal information when you participate in our referral program.</p>
+
+        <h2>1. Information We Collect</h2>
+        <p>We collect the following personal data for the referral program:</p>
+        <ul>
+            <li>Referrer’s Name, Contact Information, and Bank Details (for reward payment)</li>
+            <li>Referred Student’s Name, Contact Information, and Course Interest</li>
+            <li>Any other details provided during the referral registration process</li>
+        </ul>
+
+        <h2>2. How We Use Your Information</h2>
+        <p>The collected information is used for:</p>
+        <ul>
+            <li>Verifying the eligibility of both the Referrer and the Referred Student</li>
+            <li>Processing referral rewards</li>
+            <li>Communicating updates regarding the referral program</li>
+            <li>Ensuring compliance with legal and security requirements</li>
+        </ul>
+
+        <h2>3. Data Security</h2>
+        <p>We prioritize the security of your personal data. IOTA Academy implements **industry-standard measures** to prevent unauthorized access, misuse, or loss of personal information.</p>
+
+        <h2>4. Sharing of Information</h2>
+        <p>We **do not** sell, rent, or trade your personal information with third parties. However, we may share data with:</p>
+        <ul>
+            <li>Payment processing partners for reward disbursement</li>
+            <li>Legal authorities if required by law</li>
+        </ul>
+
+        <h2>5. Withdrawal & Deletion of Data</h2>
+        <p>If you wish to opt out of the referral program or request the deletion of your data, you may contact us at:</p>
+        <p><strong>Email:</strong> support@iotaacademy.com</p>
+        <p><strong>Phone:</strong> 078696 64602</p>
+
+        <h2>6. Changes to the Privacy Policy</h2>
+        <p>IOTA Academy reserves the right to update this Privacy Policy at any time. Any changes will be communicated on our website.</p>
+
+        <h2>7. Contact Information</h2>
+        <p>If you have any questions about this Privacy Policy, please contact:</p>
+        <p><strong>IOTA Academy</strong><br>
+        1st Floor, GB Tower, opp. Veda Business Park,<br>
+        near Bhawarkua Main Road, Professor Colony,<br>
+        Indore, Madhya Pradesh 452001<br>
+        <strong>Phone:</strong> 078696 64602</p>
+
+        <div class="footer">
+            &copy; 2025 IOTA Academy. All Rights Reserved.
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const faqs = document.querySelectorAll(".faq");
+
+            faqs.forEach(faq => {
+                faq.addEventListener("click", function () {
+                    const answer = this.querySelector(".answer");
+                    const icon = this.querySelector(".toggle-icon");
+
+                    if (answer.style.display === "block") {
+                        answer.style.display = "none";
+                        icon.textContent = "+";
+                    } else {
+                        answer.style.display = "block";
+                        icon.textContent = "-";
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+
+{% endblock body %}
+

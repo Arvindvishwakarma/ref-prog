@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% block title %} Refer a Friend{% endblock title %}
+
+{% block body %} 
+<br />
+<!-- Section Title -->
+<div class="container section-title" data-aos="fade-up">
+    <p><span>Refer a Friend,</span> <span class="description-title">Earn Rewards<br></span></p>
+</div><!-- End Section Title -->
+
+<div class="container" mt-2>
+    {% for message in messages  %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+      <strong>{{message}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+
+<div class="row">
+
+    <!-- Contact Section -->
+    <section id="refer" class="contact section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="row gy-4">       
+            <div class="col-lg-4">
+              <div>
+                <h2>Easy Steps</h2>
+                <br />
+              </div>
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+
+                <div>
+                  <h3>Step 1</h3>
+                  <p>1st Floor, GB Tower, opp. </p>
+                </div>
+              </div><!-- End Info Item -->
+  
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Step 2</h3>
+                  <p>+91 78696 64602</p>
+                </div>
+              </div><!-- End Info Item -->
+  
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Step 3</h3>
+                  <p>www.iotaacademy.in</p>
+                </div>
+              </div><!-- End Info Item -->
+  
+            </div>
+            <div class="col-lg-1">
+            </div>
+
+            <div class="col-lg-6">
+                <form action="/refer" method="post" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row gy-2">
+                    {% csrf_token %}
+                    <br />
+            
+                    <label for="name">Full Name</label>
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            class="form-control p-2"
+                            id="name"
+                            name="name"
+                            required
+                        />
+                    </div>
+
+                    <label for="pass1">Course</label>
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            class="form-control p-2"
+                            id="course"
+                            name="course"
+                            required
+                            />
+                    </div>
+
+                    <label for="pnumber">Phone Number</label>
+                    <div class="form-group">
+                        <input
+                            type="number"
+                            class="form-control p-2"
+                            id="pnumber"
+                            name="pnumber"
+                            required
+                            />
+                    </div>
+
+                    <label for="pnumber2">Alternate Number</label>
+                    <div class="form-group">
+                        <input
+                            type="number"
+                            class="form-control p-2"
+                            id="pnumber2"
+                            name="pnumber2"
+                            />
+                    </div>
+            
+
+                    <label for="email">Email</label>
+                    <div class="form-group">
+                        <input
+                            type="email"
+                            class="form-control p-2"
+                            id="email"
+                            name="email"
+                        />
+                    </div>
+
+                    <label for="remarks">Remarks</label>
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            class="form-control p-2"
+                            id="remarks"
+                            name="remarks"
+                    
+                            />
+                    </div>
+            
+
+                    <br />
+                    <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-dark">Register to Refer</button>
+                    </div>
+                </form>
+            
+            </div>
+
+          </div>
+
+          <br  />
+
+        </div>
+  
+      </section><!-- /Contact Section -->
+
+{% endblock body %}
+

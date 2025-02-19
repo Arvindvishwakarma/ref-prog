@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block title %} Rerferral Rewards{% endblock title %}
+
+{% block body %} 
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referral Rewards for Successful Admissions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        .container {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .reward-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .reward-card h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        .reward-card .amount {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        .reward-card:nth-child(even) {
+            background-color: #f1f1f1;
+        }
+        .reward-card:nth-child(odd) {
+            background-color: #e8f5e9;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Referral Rewards for Successful Admissions</h1>
+    <p>Earn rewards by referring students to our various courses!</p>
+</header>
+
+<div class="container">
+    <div class="reward-card">
+        <h3>Business Analytics</h3>
+        <span class="amount">$300</span>
+    </div>
+    <div class="reward-card">
+        <h3>Data Analytics</h3>
+        <span class="amount">$500</span>
+    </div>
+    <div class="reward-card">
+        <h3>Data Science</h3>
+        <span class="amount">$800</span>
+    </div>
+    <div class="reward-card">
+        <h3>Machine Learning</h3>
+        <span class="amount">$1000</span>
+    </div>
+    <div class="reward-card">
+        <h3>Artificial Intelligence</h3>
+        <span class="amount">$2000</span>
+    </div>
+    <div class="reward-card">
+        <h3>Web Development</h3>
+        <span class="amount">$500</span>
+    </div>
+    <div class="reward-card">
+        <h3>Other</h3>
+        <span class="amount">$300</span>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 IOTA Academy | All rights reserved</p>
+</footer>
+
+</body>
+
+{% endblock body %}
